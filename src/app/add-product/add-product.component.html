@@ -1,0 +1,41 @@
+
+<div class="col-md-6">
+  <h2 class="text-center">Novo Produto</h2>
+  <form>
+    <div class="form-group">
+      <label for="description">Descrição:</label>
+      <input         
+        [(ngModel)]="product.description"
+        placeholder="Descrição do produto"
+        name="description"
+        class="form-control"
+        id="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="value">Valor:</label>
+      <input
+        [(ngModel)]="product.value"
+        placeholder="Valor unitário do produto"
+        name="value"
+        class="form-control"
+        id="value"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="active">
+        <input 
+          type="checkbox"
+          [(ngModel)]="product.active"        
+          name="active"
+          class="form-control"
+          id="active"          
+        />Ativo
+      </label>
+    </div>
+
+    <button class="btn btn-success" (click)="createProduct()">Salvar</button>
+  </form>
+</div>
