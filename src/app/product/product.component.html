@@ -1,5 +1,5 @@
 
-<div class="col-md-12">
+<div class="col-md-10">
   <h2 class="text-center">Produtos</h2>  
 
   <label for="pageNum">Página:</label>
@@ -18,8 +18,28 @@
     id="pageSize"
   /> 
 
-  <button class="btn btn-primary" (click)="search()">Listar</button>
+  <p>
+      <input type="radio" value="all" name="activeStatus" [(ngModel)]="activeStatus"> Todos
+      <input type="radio" value="active" name="activeStatus" [(ngModel)]="activeStatus"> Ativos
+      <input type="radio" value="inactive" name="activeStatus" [(ngModel)]="activeStatus"> Inativos
+  </p>
 
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-left"><button class="btn btn-primary" (click)="search()">Listar</button></div>
+      <div class="col-md-6 text-right">
+          <label for="productId">Buscar por ID:</label>
+          <input
+            type="text"
+            [(ngModel)]="productId"
+            name="productId"    
+            id="productId"
+          />
+          <button class="btn btn-primary" (click)="searchById()">Buscar</button>
+      </div>
+    </div>
+  </div>
 
   <table class="table table-striped">
     <thead>
@@ -28,7 +48,8 @@
         <th>Descrição</th>
         <th>Valor</th>
         <th>Ativo</th>
-        <th>Ação</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     
@@ -39,6 +60,7 @@
             <td>{{ product.value }}</td>
             <td>{{ product.active ? "Sim" : "Não" }}</td>
             <td><button class="btn btn-primary" (click)="edit(product)">Editar</button></td>
+            <td><button *ngIf="product.active" class="btn btn-primary" (click)="inactivate(product)">Inativar</button></td>
         </tr>
     </tbody>
   </table>
