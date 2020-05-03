@@ -1,5 +1,5 @@
 # wiprotest-front
-Repositório do front end Angular para o CRUD de Produtos.
+###### Repositório do front end Angular para o CRUD de Produtos.
 
 Para executar a aplicação:
 
@@ -13,5 +13,5 @@ Para executar a aplicação:
 
 A aplicação será iniciada na porta default (4200).
 
-Acessar localhost:4200 no navegador. Certifique-se que o back-end Spring Boot já esteja rodando.
+Acessar localhost:4200 no navegador. Certifique-se que o back-end Spring Boot já esteja rodando (https://github.com/carlomarcello/wiprotest).
 
