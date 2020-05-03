@@ -6,7 +6,7 @@
         <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">Visualizar produtos</a></li>
         <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addproduct" class="nav-link">Novo produto</a></li>    
         <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
-        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
       </ul>    
     </nav>    
 </header>

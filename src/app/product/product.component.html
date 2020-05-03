@@ -1,20 +1,44 @@
 
-<div class="col-md-6">
-  <h2 class="text-center">Produtos</h2>
+<div class="col-md-12">
+  <h2 class="text-center">Produtos</h2>  
+
+  <label for="pageNum">Página:</label>
+  <input
+    type="number"
+    [(ngModel)]="pageNum"
+    name="pageNum"    
+    id="pageNum"
+  /> 
+
+  <label for="pageSize">Itens por página:</label>
+  <input
+    type="number"
+    [(ngModel)]="pageSize"
+    name="pageSize"    
+    id="pageSize"
+  /> 
+
+  <button class="btn btn-primary" (click)="search()">Listar</button>
+
+
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Descrição</th>
         <th>Valor</th>
         <th>Ativo</th>
+        <th>Ação</th>
       </tr>
     </thead>
     
     <tbody>
         <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
             <td>{{ product.description }}</td>
             <td>{{ product.value }}</td>
             <td>{{ product.active ? "Sim" : "Não" }}</td>
+            <td><button class="btn btn-primary" (click)="edit(product)">Editar</button></td>
         </tr>
     </tbody>
   </table>
